@@ -22,8 +22,10 @@ export class AppComponent implements OnInit {
   //if you want to pass multiple validators, make an array
   ngOnInit() {
     this.signupForm = new FormGroup({
-      'username': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'userData': new FormGroup({
+        'username': new FormControl(null, Validators.required),
+        'email': new FormControl(null, [Validators.required, Validators.email]),
+      }), 
       'gender': new FormControl('male')
     });
   }
